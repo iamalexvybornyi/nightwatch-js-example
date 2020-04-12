@@ -1,0 +1,15 @@
+{
+  "name": "nightwatch-js-example",
+  "version": "1.0.0",
+  "description": "Nightwatch-js framework example for Sperasoft",
+  "main": "index.js",
+  "scripts": {
+    "test": "nightwatch"
+  },
+  "author": "Alexander Vyborny",
+  "license": "ISC",
+  "devDependencies": {
+    "chromedriver": "^81.0.0",
+    "nightwatch": "^1.3.4"
+  }
+}
