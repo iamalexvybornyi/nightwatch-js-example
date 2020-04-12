@@ -1,8 +1,6 @@
-// require('dotenv').config();
-
 module.exports = {
     'src_folders': ['tests'],
-    // 'page_objects_path': ['page-objects'],
+    'page_objects_path': ['page-objects'],
 
     'webdriver': {
         'start_process': true,
@@ -21,7 +19,6 @@ module.exports = {
             'desiredCapabilities': {
                 'browserName': 'chrome',
                 'chromeOptions': {
-                    //'args': ['--headless']
                     args: [
                         '--ignore-certificate-errors',
                         '--start-maximized'
