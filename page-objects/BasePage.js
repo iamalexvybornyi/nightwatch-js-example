@@ -2,6 +2,9 @@ module.exports = {
 
     url: 'http://automationpractice.com',
 
+    elements: {
+    },
+
     commands: [
         {
             waitForPageToLoad: function() {
