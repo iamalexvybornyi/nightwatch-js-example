@@ -1,35 +1,40 @@
-module.exports = {
+const basePage = require('./BasePage');
 
-    elements: {
-    },
+const props = {
+    searchResultsText: 'SEARCH'
+};
 
-    commands: {
-    },
+const elements = {};
+Object.assign(elements, basePage.elements);
 
-    sections: {
-        mainContentContainerSection: {
-            selector: 'div[class="columns-container"]',
-            locateStrategy: 'css selector',
+const commands = {};
+Object.assign(commands, basePage.commands);
 
-            elements: {
-                searchResultsHeader: 'h1[class="page-heading  product-listing"]',
-                listOfProducts: 'ul[class="product_list grid row"]'
-            },
+const sections = {
+    mainContentContainerSection: {
+        selector: 'div[class="columns-container"]',
+        locateStrategy: 'css selector',
 
-            commands: [
-                {
-                    verifyResultsHeaderIsDisplayed: function () {
-                        this.waitForElementVisible(this.elements.searchResultsHeader);
-                        this.verify.containsText(this.elements.searchResultsHeader, this.props.searchResultsText);
-                    }
+        elements: {
+            searchResultsHeader: 'h1[class="page-heading  product-listing"]',
+            listOfProducts: 'ul[class="product_list grid row"]'
+        },
+
+        commands: [
+            {
+                verifyResultsHeaderIsDisplayed: function () {
+                    this.waitForElementVisible(this.elements.searchResultsHeader);
+                    this.verify.containsText(this.elements.searchResultsHeader, props.searchResultsText);
                 }
-            ],
-
-            props: function () {
-                return {
-                    searchResultsText: 'SEARCH'
-                };
             }
-        }
+        ],
     }
-}
+};
+Object.assign(sections, basePage.sections);
+
+module.exports = {
+    props: props,
+    commands: commands,
+    elements: elements,
+    sections: sections
+};

@@ -1,6 +1,7 @@
 module.exports = {
     'src_folders': ['tests'],
     'page_objects_path': ['page-objects'],
+    'globals_path': 'globals/globals.js',
 
     'webdriver': {
         'start_process': true,
@@ -15,6 +16,9 @@ module.exports = {
                 'on_failure': true,
                 'on_error': true,
                 'path': 'tests_output/screenshots'
+            },
+            'globals': {
+                'globalVarExample': 'someExampleValue',
             },
             'desiredCapabilities': {
                 'browserName': 'chrome',
