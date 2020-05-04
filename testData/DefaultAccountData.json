@@ -1,0 +1,21 @@
+{
+    "gender": "Mr.",
+    "firstName": "Alexander",
+    "lastName": "Vybornyi",
+    "email": "iamalexvybornyi@gmail.com",
+    "password": "12345",
+    "dateOfBirth": "26-05-1994",
+    "signUpForNewsletter": false,
+    "recieveOffers": false,
+    "company": "",
+    "address": "Some address 123",
+    "address2": "",
+    "city": "LA",
+    "state": "California",
+    "zipCode": "00000",
+    "country": "United States",
+    "additionalInformation": "",
+    "homePhone": "",
+    "mobilePhone": "89998887766",
+    "addressAlias": "My address"
+}

@@ -3,6 +3,7 @@ const basePage = require('./BasePage');
 const props = {
     searchResultsText: 'SEARCH'
 };
+Object.assign(props, basePage.props);
 
 const elements = {};
 Object.assign(elements, basePage.elements);
@@ -23,7 +24,10 @@ const sections = {
         commands: [
             {
                 verifyResultsHeaderIsDisplayed: function () {
+                    this.api.globals.logger.info('Waiting for the serch results header to appear on the page');
+                    this.api.globals.logger.debug('Waiting for the serch results header to appear');
                     this.waitForElementVisible(this.elements.searchResultsHeader);
+                    this.api.globals.logger.info('Verifying that serch results header contains "' + props.searchResultsText + '" text');
                     this.verify.containsText(this.elements.searchResultsHeader, props.searchResultsText);
                 }
             }

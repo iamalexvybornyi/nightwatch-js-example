@@ -1,7 +1,17 @@
+const fs = require('fs');
+let rawdata = fs.readFileSync('testData/DefaultAccountData.json');
+let defaultAccountData = JSON.parse(rawdata);
+const Logger = require('logger-nodejs');
+const logger = new Logger();
+
 module.exports = {
     'src_folders': ['tests'],
     'page_objects_path': ['page-objects'],
     'globals_path': 'globals/globals.js',
+    'globals': {
+        defaultAccountData: defaultAccountData,
+        logger: logger
+    },
 
     'webdriver': {
         'start_process': true,
@@ -17,9 +27,7 @@ module.exports = {
                 'on_error': true,
                 'path': 'tests_output/screenshots'
             },
-            'globals': {
-                'globalVarExample': 'someExampleValue',
-            },
+            "skip_testcases_on_fail": false,
             'desiredCapabilities': {
                 'browserName': 'chrome',
                 'chromeOptions': {

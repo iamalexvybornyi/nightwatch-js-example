@@ -1,6 +1,19 @@
+let basePage;
+let headerSection;
+let searchResultsPage;
+let mainContentContainerSection;
+let searchResultsPageHeaderSection;
+
 module.exports = {
+    before: function (browser) {
+        basePage = browser.page.BasePage();
+        headerSection = basePage.section.headerSection;
+        searchResultsPage = browser.page.SearchResultsPage();
+        mainContentContainerSection = searchResultsPage.section.mainContentContainerSection;
+        searchResultsPageHeaderSection = searchResultsPage.section.headerSection;
+    },
+
     beforeEach: function (browser) {
-        let basePage = browser.page.BasePage();
         basePage.navigate();
     },
 
@@ -9,22 +22,12 @@ module.exports = {
     },
 
     'Verify header links text'(browser) {
-        let basePage = browser.page.BasePage();
-        let headerSection = basePage.section.headerSection;
-
-        console.log('Global var example: ' + browser.globals.globalVarExample);
         basePage.waitForPageToLoad();
         headerSection.verifyContactUsText();
         headerSection.verifySignInText();
     },
 
     'Search and verify the results'(browser) {
-        let basePage = browser.page.BasePage();
-        let headerSection = basePage.section.headerSection;
-        let searchResultsPage = browser.page.SearchResultsPage();
-        let mainContentContainerSection = searchResultsPage.section.mainContentContainerSection;
-        let searchResultsPageHeaderSection = searchResultsPage.section.headerSection;
-
         basePage.waitForPageToLoad();
         headerSection.verifyContactUsText();
         headerSection.verifySignInText();
