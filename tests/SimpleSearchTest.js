@@ -21,12 +21,6 @@ module.exports = {
         browser.end();
     },
 
-    'Verify header links text'(browser) {
-        basePage.waitForPageToLoad();
-        headerSection.verifyContactUsText();
-        headerSection.verifySignInText();
-    },
-
     'Search and verify the results'(browser) {
         basePage.waitForPageToLoad();
         headerSection.verifyContactUsText();

@@ -36,6 +36,8 @@ const sections = {
                     this.api.globals.logger.debug('Waiting for the search input field to appear on the page');
                     this.waitForElementVisible(this.elements.searchInputField);
                     this.api.globals.logger.debug('Setting "' + searchParameter + '" value into the search input field');
+                    this.api.globals.logger.debug('Clearing the Search field');
+                    this.clearValue(this.elements.searchInputField);
                     this.setValue(this.elements.searchInputField, searchParameter);
                     this.api.globals.logger.debug('Waiting for the search submit button to appear on the page');
                     this.waitForElementVisible(this.elements.submitSearchButton);

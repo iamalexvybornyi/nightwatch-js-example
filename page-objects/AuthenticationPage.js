@@ -27,15 +27,16 @@ const sections = {
                     this.api.globals.logger.debug('Waiting for the email address input field to appear');
                     this.waitForElementVisible(this.elements.emailAddressInputField);
                     this.api.globals.logger.debug('Setting "' + email + '" text into email address input field');
+                    this.clearValue(this.elements.emailAddressInputField);
                     this.setValue(this.elements.emailAddressInputField, email);
                 },
 
                 clickCreateAccountButton() {
                     this.api.globals.logger.info('Clicking the "Create an account" button');
                     this.api.globals.logger.debug('Waiting for the "Create an account" button to appear');
-                    this.waitForElementVisible(this.elements.clickCreateAccountButton);
+                    this.waitForElementVisible(this.elements.createAccountButton);
                     this.api.globals.logger.debug('Clicking the "Create an account" button');
-                    this.click(this.elements.clickCreateAccountButton);
+                    this.click(this.elements.createAccountButton);
                 }
             }
         ],
@@ -58,6 +59,7 @@ const sections = {
                     this.api.globals.logger.debug('Waiting for the email address input field to appear');
                     this.waitForElementVisible(this.elements.emailAddressInputField);
                     this.api.globals.logger.debug('Setting "' + email + '" text into email address input field');
+                    this.clearValue(this.elements.emailAddressInputField);
                     this.setValue(this.elements.emailAddressInputField, email);
                 },
 
@@ -66,6 +68,7 @@ const sections = {
                     this.api.globals.logger.debug('Waiting for the password input field to appear');
                     this.waitForElementVisible(this.elements.passwordInputField);
                     this.api.globals.logger.debug('Setting "' + password + '" text into password input field');
+                    this.clearValue(this.elements.passwordInputField);
                     this.setValue(this.elements.passwordInputField, password);
                 },
 
