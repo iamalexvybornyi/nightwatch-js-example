@@ -24,10 +24,10 @@ const sections = {
         commands: [
             {
                 verifyResultsHeaderIsDisplayed: function () {
-                    this.api.globals.logger.info('Waiting for the serch results header to appear on the page');
-                    this.api.globals.logger.debug('Waiting for the serch results header to appear');
+                    this.api.globals.logInfo(this, 'Waiting for the serch results header to appear on the page');
+                    this.api.globals.logDebug(this, 'Waiting for the serch results header to appear');
                     this.waitForElementVisible(this.elements.searchResultsHeader);
-                    this.api.globals.logger.info('Verifying that serch results header contains "' + props.searchResultsText + '" text');
+                    this.api.globals.logInfo(this, 'Verifying that serch results header contains "' + props.searchResultsText + '" text');
                     this.verify.containsText(this.elements.searchResultsHeader, props.searchResultsText);
                 }
             }

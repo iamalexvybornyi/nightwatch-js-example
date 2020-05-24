@@ -9,8 +9,9 @@
   "author": "Alexander Vyborny",
   "license": "ISC",
   "devDependencies": {
-    "chromedriver": "^81.0.0",
-    "logger-nodejs": "^1.1.0",
+    "chromedriver": "^83.0.0",
+    "geckodriver": "^1.19.1",
+    "log4js": "^6.2.1",
     "nightwatch": "^1.3.4"
   }
 }

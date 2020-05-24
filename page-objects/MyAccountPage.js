@@ -16,13 +16,13 @@ Object.assign(elements, basePage.elements);
 
 const commands = {
     verifyTextOnMyAccountPageMatchesExpected: function () {
-        this.api.globals.logger.debug('Waiting for the Account Page header to appear');
+        this.api.globals.logDebug(this, 'Waiting for the Account Page header to appear');
         this.waitForElementVisible(this.elements.myAccountHeader);
-        this.api.globals.logger.info('Verifying that the Account Page header contains "' + this.props.myAccountHeaderText + '" text');
+        this.api.globals.logInfo(this, 'Verifying that the Account Page header contains "' + this.props.myAccountHeaderText + '" text');
         this.verify.containsText(this.elements.myAccountHeader, this.props.myAccountHeaderText);
-        this.api.globals.logger.debug('Waiting for the welcoming text to appear');
+        this.api.globals.logDebug(this, 'Waiting for the welcoming text to appear');
         this.waitForElementVisible(this.elements.welcomingTextElement);
-        this.api.globals.logger.info('Verifying that the welcoming text contains "' + this.props.welcomingText + '" text');
+        this.api.globals.logInfo(this, 'Verifying that the welcoming text contains "' + this.props.welcomingText + '" text');
         this.verify.containsText(this.elements.welcomingTextElement, this.props.welcomingText);
     }
 };

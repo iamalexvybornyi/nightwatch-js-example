@@ -5,6 +5,8 @@ let mainContentContainerSection;
 let searchResultsPageHeaderSection;
 
 module.exports = {
+    '@tags': ['search'],
+
     before: function (browser) {
         basePage = browser.page.BasePage();
         headerSection = basePage.section.headerSection;
@@ -26,6 +28,7 @@ module.exports = {
         headerSection.verifyContactUsText();
         headerSection.verifySignInText();
         headerSection.submitSearch('Dress');
+        
         searchResultsPage.waitForPageToLoad();
         searchResultsPageHeaderSection.verifyContactUsText();
         searchResultsPageHeaderSection.verifySignInText();
