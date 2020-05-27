@@ -1,9 +1,17 @@
 const fs = require('fs');
 let rawdata = fs.readFileSync('./testData/DefaultAccountData.json');
 let defaultAccountData = JSON.parse(rawdata);
-var log4js = require('log4js');
-var logger = log4js.getLogger();
+
+let log4js = require('log4js');
+let logger = log4js.getLogger();
 logger.level = 'debug';
+
+let HtmlReporter = require('nightwatch-html-reporter');
+let reporter = new HtmlReporter({
+    openBrowser: false,
+    reportsDirectory: './tests_output',
+    themeName: 'default',
+});
 
 module.exports = {
 
@@ -49,11 +57,7 @@ module.exports = {
     // until a given timeout is reached, before the test runner gives up and fails the test.
     retryAssertionTimeout: 5000,
 
-    // Custom reporter
-    reporter: function (results, done) {
-        // do something with the results
-        done(results);
-    },
+    reporter: reporter.fn,
 
     // Custom method for logging info messages to have the right order of log messages in console
     logInfo: function (browser, message) {
