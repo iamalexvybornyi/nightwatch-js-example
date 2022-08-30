@@ -30,6 +30,6 @@ jobs:
 #      with:
 #        chrome-version: stable
     - run: sudo apt-get install google-chrome-stable
-    - run: chrome --version
+#    - run: chrome --version
     - run: npm install
     - run: npm test
