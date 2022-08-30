@@ -26,11 +26,5 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-#    - uses: browser-actions/setup-chrome@latest
-#      with:
-#        chrome-version: stable
-    - run: sudo apt-get install google-chrome-stable
-    - run: sudo apt-get install xvfb
-#    - run: chrome --version
     - run: npm install
     - run: xvfb-run --auto-servernum npm test
