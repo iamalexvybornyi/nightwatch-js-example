@@ -30,6 +30,7 @@ jobs:
 #      with:
 #        chrome-version: stable
     - run: sudo apt-get install google-chrome-stable
+    - run: sudo apt-get install xvfb
 #    - run: chrome --version
     - run: npm install
     - run: npm test
