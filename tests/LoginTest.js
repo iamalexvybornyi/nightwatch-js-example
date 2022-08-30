@@ -10,7 +10,7 @@ let yourAddressSection;
 const CommonUtility = require('../utils/CommonUtility');
 
 module.exports = {
-    '@tags': ['login'],
+    '@tags': ['login', 'smoke'],
 
     before: function (browser) {
         basePage = browser.page.BasePage();

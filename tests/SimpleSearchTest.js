@@ -5,7 +5,7 @@ let mainContentContainerSection;
 let searchResultsPageHeaderSection;
 
 module.exports = {
-    '@tags': ['search'],
+    '@tags': ['search', 'smoke'],
 
     before: function (browser) {
         basePage = browser.page.BasePage();
