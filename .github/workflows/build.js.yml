@@ -1,13 +1,24 @@
 # This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: Node.js CI
+name: Run Automation Tests
 
 on:
   push:
     branches: [ "*" ]
   pull_request:
     branches: [ "*" ]
+  workflow_dispatch:
+    inputs:
+      tags:
+        description: 'Test scenario tags'
+        required: true
+        default: 'smoke'
+        type: choice
+        options:
+          - smoke
+          - login
+          - search
 
 jobs:
   build:
@@ -30,7 +41,7 @@ jobs:
       run: npm install
     - name: Run tests
       continue-on-error: true
-      run: xvfb-run --auto-servernum npm test
+      run: xvfb-run --auto-servernum npm test -- --tag ${{ inputs.tags }}
     - name: "Publish test results"
       uses: peaceiris/actions-gh-pages@v3.7.3
       with:
